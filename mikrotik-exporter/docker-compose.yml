@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  mikrotik-exporter:
+    image: nshttpd/mikrotik-exporter
+    container_name: mikrotik-exporter
+    volumes:
+      - ./conf.yml:/conf.yml
+    restart: unless-stopped
+    expose:
+      - 9436
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+    environment:
+     - CONFIG_FILE=/conf.yml
+

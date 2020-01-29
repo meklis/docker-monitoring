@@ -1,0 +1,6 @@
+devices:
+  - name: my_router
+    address: 10.0.60.254
+    user: meklis
+    password: meklis
+

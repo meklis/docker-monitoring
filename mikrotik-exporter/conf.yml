@@ -1,0 +1,5 @@
+devices:
+  - name: my_router
+    address: 37.57.128.90
+    user: meklis
+    password: OLOLmax2

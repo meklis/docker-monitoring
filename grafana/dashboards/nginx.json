@@ -1,0 +1,130 @@
+{
+    "meta": {
+        "type": "db",
+        "canSave": true,
+        "canEdit": true,
+        "canAdmin": true,
+        "canStar": true,
+        "slug": "nginx",
+        "expires": "0001-01-01T00:00:00Z",
+        "created": "2019-04-11T18:35:09Z",
+        "updated": "2019-04-11T18:35:09Z",
+        "updatedBy": "mindtec",
+        "createdBy": "mindtec",
+        "version": 1,
+        "hasAcl": false,
+        "isFolder": false,
+        "folderId": 0,
+        "folderTitle": "General",
+        "folderUrl": "",
+        "provisioned": false
+    },
+    "dashboard": {
+        "annotations": {
+            "list": []
+        },
+        "description": "Nginx exporter metrics",
+        "editable": true,
+        "gnetId": null,
+        "hideControls": false,
+        "links": [],
+        "refresh": "10s",
+        "rows": [
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 4,
+                        "isNew": true,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": true,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 12,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "expr": "sum(rate(container_cpu_usage_seconds_total{name=~\"nginx\"}[5m])) / count(node_cpu_seconds_total{mode=\"system\"}) * 100",
+                                "intervalFactor": 2,
+                                "legendFormat": "nginx",
+                                "refId": "A",
+                                "step": 2
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "CPU usage",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "show": true
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "title": "Nginx container metrics over JSON"
+            }
+        ],
+        "schemaVersion": 12,
+        "sharedCrosshair": true,
+        "style": "dark",
+        "timezone": "browser",
+        "title": "NEW ",
+        "uid": "QXaOwDRWz"
+    },
+    "folderId": 0,
+    "overwrite": true
+}
